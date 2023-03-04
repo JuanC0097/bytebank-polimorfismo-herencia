@@ -16,8 +16,8 @@ public class TestFuncionario {
 		System.out.println();
 		
 		System.out.println("Metodo Bonificacion");
-		System.out.println(juan.getSalario());
-		System.out.println(juan.getBonificacion());
+		System.out.println("Salario: " +juan.getSalario());
+		System.out.println("Bonificacion: "  +juan.getBonificacion());
 		
 	}
 	

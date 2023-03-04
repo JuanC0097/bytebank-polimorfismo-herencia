@@ -30,7 +30,7 @@ public class Funcionario {
 	public void setSalario(double salario) {
 		this.salario = salario;
 	}
-	
+
 	public int getTipo() {
 		return tipo;
 	}
@@ -41,19 +41,16 @@ public class Funcionario {
 
 	//3.Metodos
 	public double getBonificacion(){
-		//traera el 10% del salario
-		//si tipo es 1 es gerente
-		//si tipo de 0 es funcionario
-		if (this.tipo == 0) {
-			return this.salario * 0.1;
-			
-		} else if (this.tipo == 1) {
-			return this.salario;
-		} else {
-			return 0;
-			
-		}
-		
+		return this.salario * 0.1;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
