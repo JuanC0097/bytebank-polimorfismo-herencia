@@ -14,7 +14,7 @@ public class TestsGerente {
 		
 		//Prueba metodo obtenerclave
 		gerente.setContraseña("clave123");
-		boolean ingresa = gerente.autentificarInicio("clave123"); 
+		boolean ingresa = gerente.autentificarSesion("clave123"); 
 		System.out.println(ingresa);
 		
 		

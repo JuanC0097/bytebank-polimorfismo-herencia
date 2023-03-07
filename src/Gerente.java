@@ -9,7 +9,7 @@ public class Gerente extends Funcionario {
 		
 	}
 	
-	public boolean autentificarInicio(String contrasena) {
+	public boolean autentificarSesion(String contrasena) {
 		
 		if(this.contrasena == contrasena) {
 			return true;
