@@ -1,12 +1,12 @@
-
-
+//Clase padre
 public class Cliente {
 	
-	
+	//1. Atributos
 	private String nombre; 
 	private String documento; 
 	private String telefono;
 	
+	//2.getters y setters
 	public String getNombre() {
 		return nombre;
 	}
@@ -29,12 +29,6 @@ public class Cliente {
 	
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
-	}
-	
-	
-	
-	
-	
-	
+	}	
 	
 }

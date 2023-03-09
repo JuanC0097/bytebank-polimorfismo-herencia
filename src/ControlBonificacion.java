@@ -1,12 +1,11 @@
-//bonificacion total como banco a funcionarios
+//Clase padre
 public class ControlBonificacion {
-	//sumar todas las bonificaciones como parametro
+	
+	//1.Atributos
 	private double suma;
 	
-	/*
-	 * El parametro cambiara segun necesidad, ya que el Funcionario es la clase mas genererica
-	 * y el metodo podra aplicarse a clases mas especificas
-	 */
+	//2.Metodos:
+	//Acumula y cuenta el valor depositado total del funcionario 
 	public double regitrarSalario(Funcionario funcionario) {
 		
 		this.suma = funcionario.getBonificacion() + this.suma;

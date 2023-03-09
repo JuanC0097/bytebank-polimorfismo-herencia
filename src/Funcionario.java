@@ -1,17 +1,18 @@
-
+//Clase mas generica	|Clase Padre
 public class Funcionario {
 
+	//1. Atributos
 	private String nombre;
 	private int documento;
 	private double salario;
 	private int tipo;
 	
-	//1.Constructor: metodo del mismo tipo de retorno de la clase, se pueden crear con parametros.
+	//2. Constructor por defecto
 	public Funcionario() {
 		
 	}
 	
-	//2. getters y setters
+	//3. getters y setters
 	public String getNombre() {
 		return nombre;
 	}
@@ -39,7 +40,8 @@ public class Funcionario {
 		this.tipo = tipo;
 	}
 
-	//3.Bonificacion del 5%
+	//3.Metodos
+	//Reglas del negocio: los funcionarios genericos obtienes 5% del salario como bonificacion.
 	public double getBonificacion(){
 	return this.salario * 0.05;
 	}

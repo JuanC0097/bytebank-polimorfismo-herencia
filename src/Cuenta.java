@@ -1,16 +1,21 @@
-
+//Clase mas genericas		|Clase padre
 public class Cuenta {
 
-	
+	//1.Atributos
     private double saldo;
     private int agencia = 1;
     private int numero;
     private Cliente titular = new Cliente();
     
-    
+    //2.Atributo Compartido por todas las instancias,para el constructor
     private static int total;
     
-    //constructor
+    //3.Constructor
+    /*
+     * Recibe dos atributos
+     * Mensaje de Creacion de cuenta
+     * Acumulacion de cuentas creadas
+     */
     public Cuenta(int agencia, int numero) {
     	
     	this.agencia = agencia;
@@ -21,28 +26,30 @@ public class Cuenta {
     	
     }
     
+    //4. Metodos
+    
+    //agregar valor
     public void depositar(double valor) {
     	this.saldo = this.saldo + valor;
     }
-
+    //Retirar error
     public boolean retira(double valor) {
         if(this.saldo >= valor) {
             this.saldo -= valor;
             return true;
         } return false;
     }
-
+    //enviar y retirar valor
     public boolean transferir(double valor, Cuenta destino) {
         if(this.saldo >= valor) {	
-            this.saldo -= valor;
+            this.retira(valor);
             destino.depositar(valor);
-            return true;
-            
+            return true;   
         } return false;
     }
     
-    //getters y setters
-    public double getSaldo() {//lo modifica deposita
+    //5.getters y setters
+    public double getSaldo() {
 		return saldo;
 	}
     
@@ -78,6 +85,5 @@ public class Cuenta {
 	public static int getTotal() {
 		return Cuenta.total;
 	}
-    
     
 }
