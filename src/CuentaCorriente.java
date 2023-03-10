@@ -1,7 +1,12 @@
 //Clase hija de Cuenta
 public class CuentaCorriente extends Cuenta {
 
-	//COnstructor de la clase padre
+	@Override
+	public void depositar(double valor) {
+		this.saldo = this.saldo + valor;
+	}
+	
+	//Constructor de la clase padre
 	public CuentaCorriente(int agencia, int numero) {
 		super(agencia, numero);
 

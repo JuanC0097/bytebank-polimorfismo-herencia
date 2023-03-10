@@ -1,5 +1,5 @@
-//Clase mas generica	|Clase Padre
-public class Funcionario {
+//Clase mas generica	|Clase abstracta: No pu
+public abstract class Funcionario {
 
 	//1. Atributos
 	private String nombre;
@@ -40,19 +40,8 @@ public class Funcionario {
 		this.tipo = tipo;
 	}
 
-	//3.Metodos
-	//Reglas del negocio: los funcionarios genericos obtienes 5% del salario como bonificacion.
-	public double getBonificacion(){
-	return this.salario * 0.05;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	//3.Metodos Abtracto
+	//abliga a las clases hijas a sobreescribirlo.
+	public abstract double getBonificacion();
 	
 }

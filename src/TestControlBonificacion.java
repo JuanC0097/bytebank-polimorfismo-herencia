@@ -4,7 +4,7 @@ public class TestControlBonificacion {
 	public static void main(String[] args) {
 		
 		//Creacion de funcionario
-		Funcionario daniel = new Funcionario();
+		Funcionario daniel = new Contador();
 		Gerente david = new Gerente();
 		Contador juan = new Contador();
 		

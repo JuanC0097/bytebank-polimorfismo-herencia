@@ -1,8 +1,9 @@
-//Clase mas genericas		|Clase padre
-public class Cuenta {
+//Clase mas genericas		|Clase abtracta
+public abstract class Cuenta {
 
 	//1.Atributos
-    private double saldo;
+	//atributo accesible por una clase hija
+    protected double saldo;
     private int agencia = 1;
     private int numero;
     private Cliente titular = new Cliente();
@@ -28,10 +29,9 @@ public class Cuenta {
     
     //4. Metodos
     
-    //agregar valor
-    public void depositar(double valor) {
-    	this.saldo = this.saldo + valor;
-    }
+    //Metodo abtracto
+    public abstract void depositar(double valor);
+    
     //Retirar error
     public boolean retira(double valor) {
         if(this.saldo >= valor) {
