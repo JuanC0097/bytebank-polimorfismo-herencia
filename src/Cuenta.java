@@ -19,6 +19,14 @@ public abstract class Cuenta {
      */
     public Cuenta(int agencia, int numero) {
     	
+    	if(agencia < 1) {
+    		throw new IllegalArgumentException("Agencia Invalida");
+    	}
+    	
+    	if(numero < 1) {
+    		throw new IllegalArgumentException("Numero de Cuenta Invalido");
+    	}
+    	
     	this.agencia = agencia;
     	this.numero = numero;
     	System.out.println("Creacion de cuenta, Cuenta n° " +  this.numero);
@@ -28,21 +36,24 @@ public abstract class Cuenta {
     }
     
     //4. Metodos
-    
     //Metodo abtracto
     public abstract void depositar(double valor);
     
-    //Retirar error
-    public boolean retira(double valor) {
-        if(this.saldo >= valor) {
-            this.saldo -= valor;
-            return true;
-        } return false;
+    //Metodo con bomba
+    public void retira(double valor) throws SaldoInsuficienteException {
+        if(this.saldo < valor) {
+        	throw new SaldoInsuficienteException("No tienes saldo suficiente");
+        }
+    	this.saldo -= valor;
     }
     //enviar y retirar valor
     public boolean transferir(double valor, Cuenta destino) {
         if(this.saldo >= valor) {	
-            this.retira(valor);
+            try {
+				this.retira(valor);
+			} catch (SaldoInsuficienteException e) {
+				e.printStackTrace();
+			}
             destino.depositar(valor);
             return true;   
         } return false;

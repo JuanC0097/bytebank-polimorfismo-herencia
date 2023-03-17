@@ -5,8 +5,9 @@ public class TestFuncionario {
 		
 		Funcionario juan = new Contador();
 		juan.setNombre("Juan");
-		juan.setDocumento(10102515);
+		juan.setDocumento("10102515");
 		juan.setSalario(2000);
+		juan.setTipo(0);
 		
 		System.out.println("metodos get");
 		System.out.println(juan.getNombre());

@@ -1,26 +1,30 @@
 //Clase hija de Cuenta
-public class CuentaCorriente extends Cuenta {
+public class CuentaCorriente extends Cuenta implements Tributacion{
 
+	
+	public CuentaCorriente(int agencia, int numero) {
+		super(agencia, numero);
+	}
+	
 	@Override
 	public void depositar(double valor) {
 		this.saldo = this.saldo + valor;
 	}
-	
-	//Constructor de la clase padre
-	public CuentaCorriente(int agencia, int numero) {
-		super(agencia, numero);
 
-	}
-
-	//Sobreescritura metodo clase Cuenta <nombreMetodo + Ctrl + espacio
+	//Sobreescritura metodo padre Cuenta <nombreMetodo + Ctrl + espacio
 	/*
 	 * Firma del metodo igual, no cambia.
 	 * Necesario el mensaje, para informar la sobreescritura
 	 */
 	@Override
-	public boolean retira(double valor) {
+	public void retira(double valor) throws SaldoInsuficienteException {
 		double comision = 0.2;
-		return super.retira(valor + comision);
+		super.retira(valor + comision);
+	}
+
+	@Override
+	public double getValorImpuesto() {
+		return super.saldo * 0.01;
 	}
 	
 }

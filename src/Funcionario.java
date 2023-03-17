@@ -1,9 +1,9 @@
-//Clase mas generica	|Clase abstracta: No pu
+//Clase mas generica	|Clase abstracta:
 public abstract class Funcionario {
 
 	//1. Atributos
 	private String nombre;
-	private int documento;
+	private String documento;
 	private double salario;
 	private int tipo;
 	
@@ -19,10 +19,10 @@ public abstract class Funcionario {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public int getDocumento() {
+	public String getDocumento() {
 		return documento;
 	}
-	public void setDocumento(int documento) {
+	public void setDocumento(String documento) {
 		this.documento = documento;
 	}
 	public double getSalario() {

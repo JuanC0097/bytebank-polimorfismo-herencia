@@ -29,7 +29,7 @@ public class TestReferencias {
 		 * 
 		 * SIEMPRE SERA LLAMADO EL METODO MAS ESPECIFICO
 		 */
-		gerente.autentificarSesion("askudf");
+		gerente.iniciarSesion("askudf");
 		
 	}
 	

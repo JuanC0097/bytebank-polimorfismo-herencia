@@ -1,32 +1,30 @@
 //Clase hija de funcionario
-public class Gerente extends Funcionario {
+public class Gerente extends Funcionario implements Autenticable {
 
-	//1. Atributos
-	private String contrasena;
+
+	public AutentificacionUtil util;
 	
-	//2. Necesario solo set 	
-	public void setContraseña( String contraseña) {
-		
-		this.contrasena = contraseña;
-		
+	
+	public Gerente(){
+		this.util = new AutentificacionUtil();
 	}
 	
-	//Metodos
-	
-	//Sobre escritura del metodo abtracto
+	//Sobreescritura del metodo
 	public double getBonificacion() {
-		
-		return super.getSalario() + this.getSalario() * 0.5;
+		System.out.println("Ejecutando desde gerente");
+		return 2000;
 	}
 	
-	//Autentificar Gerente.
-		public boolean autentificarSesion(String contrasena) {
-			
-			if(this.contrasena == contrasena) {
-				return true;
-				
-			}return false;
-			
-		}
+	@Override
+	public void setClave(String clave) {
+		this.util.setClave(clave);
+	}
+	
+	@Override
+	public boolean iniciarSesion(String clave) {
+		return this.util.iniciarSesion(clave);
+	}
+	
+	
 	
 }
